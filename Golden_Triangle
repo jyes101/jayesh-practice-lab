@@ -1,6 +1,6 @@
 import java.io.*;
 import java.math.*;
-class golden_Tringle{
+class golden_Triangle{
   public static void main(String args[])throws IOException{
     int no_of_boxes;
     int no_of_rubber_bands;
@@ -14,11 +14,11 @@ class golden_Tringle{
     System.out.println("Enter Number of Boxes:");
     no_of_boxes = Integer.parseInt(in.readLine());
     
-    System.out.println("Enter lenght of the boxes:");
+    System.out.println("Enter length of the boxes:");
     for(i=0;i<no_of_boxes;i++){
     	length_of_boxes[i] = Integer.parseInt(in.readLine());
     	System.out.print("\n");
-    	System.out.print(lenght_of_boxes[i]);
+    	System.out.print(length_of_boxes[i]);
     	}
     
     	System.out.println("Enter number of rubber band:");
@@ -37,8 +37,8 @@ class golden_Tringle{
     	while(no_of_boxes != 0){
     	int count = 0;
     		for(k=0;k<no_of_boxes;k++){
-    			float origianl_circumference_of_rubber_band = 2*Math.PI*original_radius_of_rubber_band[k];
-    			float maximum_circumference_of_rubber_band = 2*Math.PI*max_radius_of_rubber_band[k];
+    			double origianl_circumference_of_rubber_band = 2*Math.PI*original_radius_of_rubber_band[k];
+    			double maximum_circumference_of_rubber_band = 2*Math.PI*max_radius_of_rubber_band[k];
     			int circumference_of_box = 4*length_of_boxes[k];
     			
     			if(origianl_circumference_of_rubber_band <= circumference_of_box){
@@ -48,6 +48,7 @@ class golden_Tringle{
     				else{
     				System.out.println("Opps! there is something wrong.");
     				}
+    			}
     			else{
     				System.out.println("Opps! there is something wrong.");
     			}
@@ -57,16 +58,3 @@ class golden_Tringle{
     	System.out.println("Opps! You should give valid number of boxes:");
     }
    }
-    					
-    			
-    			
-    			
-    		
-    		
-    	
-    
-    
-    
-    
-    
-    
