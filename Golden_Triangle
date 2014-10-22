@@ -13,6 +13,7 @@ class golden_Triangle{
     DataInputStream in = new DataInputStream(System.in);
     System.out.println("Enter Number of Boxes:");
     no_of_boxes = Integer.parseInt(in.readLine());
+    System.out.println(no_of_boxes);
     
     System.out.println("Enter length of the boxes:");
     for(i=0;i<no_of_boxes;i++){
