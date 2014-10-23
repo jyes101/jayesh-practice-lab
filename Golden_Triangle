@@ -1,6 +1,6 @@
 import java.io.*;
 import java.math.*;
-public class golden_Triangle{
+class golden_triangle{
   public static void main(String args[])throws IOException{
     int no_of_boxes = 0;
     int no_of_rubber_bands;
@@ -9,34 +9,39 @@ public class golden_Triangle{
     int original_radius_of_rubber_band[] = new int[10];
     int max_radius_of_rubber_band[] = new int[10];
     int i,j,k;
+    
     try{
     DataInputStream in = new DataInputStream(System.in);
     System.out.println("Enter Number of Boxes:");
     no_of_boxes = Integer.parseInt(in.readLine());
-    System.out.println(no_of_boxes);
-    
-    System.out.println("Enter length of the boxes:");
+    System.out.println("\nNumber of Boxes are:->"+ no_of_boxes);
+  
+    System.out.println("\nEnter length of the boxes:");
     for(i=0;i<no_of_boxes;i++){
-        length_of_boxes[i] = Integer.parseInt(in.readLine());
-    	System.out.print("\n");
-    	System.out.print(length_of_boxes[i]);
-    	}
-    
-    	System.out.println("Enter number of rubber band:");
+        length_of_boxes[i] = Integer.parseInt(in.readLine());}
+	  for(i=0;i<no_of_boxes;i++)
+	  System.out.println("Length of box"+(i+1)+ ":-> " + length_of_boxes[i]);
     	no_of_rubber_bands = no_of_boxes;
-    	System.out.println("Number of rubber_bands:->" + no_of_rubber_bands);
-    
-    	System.out.println("Enter original & maximum radius of the rubber_bands:");
-   
+    	
+    	//Number of rubber band should be equal to Number of boxs.
+    	System.out.println("\nNumber of rubber_bands:-> " + no_of_rubber_bands);
+    	
+    	System.out.println("\nEnter original radius of the rubber_bands:");
     	for(j=0;j<no_of_rubber_bands;j++){
-    		original_radius_of_rubber_band[j] = Integer.parseInt(in.readLine());
-    		max_radius_of_rubber_band[j] = Integer.parseInt(in.readLine());
-    		System.out.print("\n");
-    		System.out.print(original_radius_of_rubber_band[j] + " " + max_radius_of_rubber_band[j]);
-    		}
-    }
- catch(Exception e){}		
-    	while(no_of_boxes != 0){
+    		original_radius_of_rubber_band[j] = Integer.parseInt(in.readLine());}
+    		
+	for(j=0;j<no_of_rubber_bands;j++)
+	System.out.println("Original radius of rubber band"+(j+1) + ":-> " + original_radius_of_rubber_band[j]);
+	
+	System.out.println("\nEnter maximum radius of the rubber_bands:");
+	for(j=0;j<no_of_rubber_bands;j++){
+    		max_radius_of_rubber_band[j] = Integer.parseInt(in.readLine());}
+	for(j=0;j<no_of_rubber_bands;j++)
+	System.out.println("Maximum radius of rubber band"+(j+1)+"-> " + max_radius_of_rubber_band[j]);	
+ 	}
+ 	catch(Exception e){}	
+ 	
+	//Counting the number of boxes that can be paked.
     	int count = 0;
     		for(k=0;k<no_of_boxes;k++){
     			double origianl_circumference_of_rubber_band = 2*Math.PI*original_radius_of_rubber_band[k];
@@ -46,17 +51,9 @@ public class golden_Triangle{
     			if(origianl_circumference_of_rubber_band <= circumference_of_box){
     				if(circumference_of_box <= maximum_circumference_of_rubber_band){
     					count++;
-    					}
-    				else{
-    				System.out.println("Opps! there is something wrong.");
-    				}
-    			}
-    			else{
-    				System.out.println("Opps! there is something wrong.");
-    			}
+    				}else{System.out.println("\nOpps!kuch galti ho gayi. ;)");}
+    			}else{System.out.println("\nOyee galti na kari samjha ki. ;)");}
     		}
-    		System.out.println("Maximum number of box/boxes is/are paked" + count);
-    	}
-    	//System.out.println("Opps! You should give valid number of boxes:");
+    		System.out.println("\nMaximum number of box/boxes is/are paked:--> "+ count);
     }
-   }
+}
